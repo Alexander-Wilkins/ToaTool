@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { ISetData, ISetPieces } from './set-data';
-import { first, Observable } from 'rxjs';
+import { ISetData } from './set-data';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
