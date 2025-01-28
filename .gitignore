@@ -1,0 +1,44 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Node modules
+node_modules/
+dist/
+build/
+
+# Dependency directories
+packages/**/node_modules
+
+# Angular specific
+.angular/
+.angular-cache/
+*.ngfactory.ts
+*.ngsummary.json
+*.ngstyle.ts
+*.scss.d.ts
+
+# NestJS specific
+*.js
+*.d.ts
+*.js.map
+*.d.ts.map
+
+# IDEs and editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Bionicle Resources
+
+
+# OS generated files
+.DS_Store
+Thumbs.db

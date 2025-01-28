@@ -1,0 +1,21 @@
+year, setNumber, name, bionicleType, color, element, pieceCount, size
+2001, 8531, Pohatu, Toa, brown, stone, 49, medium
+2001, 8532, Onua, Toa, black, earth, 30, medium
+2001, 8533, Gali, Toa, blue, water, 35, medium
+2001, 8534, Tahu, Toa, red, fire, 33, medium
+2001, 8535, Lewa, Toa, green, air, 36, medium
+2001, 8536, Kopaka, Toa, white, ice, 33, medium
+
+2001, 8537, Nui-Rama, Rahi, blue, -, 165, large
+2001, 8538, Muaka & Kane-Ra, Rahi, tan, -, 408, large
+2001, 8539, Manas, Rahi, red, -, 644, large
+2001, 8549, Tarakava, Rahi, blue, -, 208, large
+2001, 8548, Nui-Jaga, Rahi, blue, -, 221, large
+
+2001, 8540, Vakama, Turaga, red, fire, 27, small
+2001, 8541, Matau, Turaga, green, air, 26, small
+2001, 8542, Onewa, Turaga, brown, stone, 26, small
+2001, 8543, Nokama, Turaga, blue, water, 26, small
+2001, 8544, Nuju, Turaga, white, ice, 26, small
+2001, 8545, Whenua, Turaga, black, earth, 26, small
+2001, 8546, Power Pack, Accessory, -, -, 0, -

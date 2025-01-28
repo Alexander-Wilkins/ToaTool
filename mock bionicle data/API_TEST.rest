@@ -1,0 +1,67 @@
+@hostname = localhost
+@port = 3000
+@host = {{hostname}}:{{port}}
+@contentType = application/json
+@createdAt = {{$datetime iso8601}}
+@modifiedBy = {{$processEnv USERNAME}}
+
+@mockApiKey = nest-is-awesome
+
+
+### Bionicle Data
+
+### Set numbers
+@pohatu = 8531-1
+@tahu = 8532-1
+@kopaka = 8533-1
+@lewa = 8534-1
+@gali = 8535-1
+@onua = 8536-1
+
+
+### GET All Episodes
+# http://localhost:3000/episodes
+GET http://{{host}}/episodes?sort=desc
+
+### GET /episodes/:id
+GET http://localhost:3000/episodes/1a1cd80f-62e4-4201-9cc8-d6c3568d2895
+
+
+### POST request
+POST http://localhost:3000/episodes
+Content-Type: {{contentType}}
+X-API-KEY: {{mockApiKey}}
+
+{
+    "name": "Mock title for Boncles",
+    "featured": true,
+    "publishedAt": "{{createdAt}}"
+}
+
+
+### Test Get Bionicles
+GET http://{{host}}/bionicles
+
+### Test Get Bionicle by search term
+GET http://{{host}}/bionicles?8531-1
+
+
+### Rebrickable API
+
+@rebrickable = https://rebrickable.com/api/v3/lego/sets
+
+GET {{rebrickable}}
+?min_year=2001
+&max_year=2010
+&search=gali
+Authorization: key 9fb8e2fe27824be982cb60651c5e44c1
+
+### Rebrickable search bionicles by theme id and year range
+GET {{rebrickable}}
+?theme_id=324
+&max_year=2001
+Authorization: key 9fb8e2fe27824be982cb60651c5e44c1
+
+### Rebrickable get set pieces by Set Number
+GET https://rebrickable.com/api/v3/lego/sets/{{pohatu}}/parts/
+Authorization: key 9fb8e2fe27824be982cb60651c5e44c1

@@ -1,0 +1,100 @@
+{
+  "data": [
+    {
+      "bionicles": [
+        {
+          "id": "1",
+          "type": "toa",
+          "attributes": {
+            "setNo": "8531-1",
+            "setName": "Pohatu",
+            "element": "Stone",
+            "color": "Brown",
+            "pieces": 49,
+            "toaType": "Toa Mata",
+            "image": "https://img.bricklink.com/ItemImage/SN/0/8531-2.png",
+            "parts": [
+              {
+                "qty": 2,
+                "itemNo": 32474,
+                "image": "https://img.bricklink.com/ItemImage/SN/0/8531-2.png"
+              },
+              {
+                "qty": 4,
+                "itemNo": 32062,
+                "image": "https://img.bricklink.com/ItemImage/SN/0/8531-2.png"
+              },
+              {
+                "qty": 8,
+                "itemNo": 4519,
+                "image": "https://img.bricklink.com/ItemImage/SN/0/8531-2.png"
+              },
+              {
+                "qty": 1,
+                "itemNo": 32073,
+                "image": "https://img.bricklink.com/ItemImage/SN/0/8531-2.png"
+              },
+              {
+                "qty": 1,
+                "itemNo": 3706,
+                "image": "https://img.bricklink.com/ItemImage/SN/0/8531-2.png"
+              },
+              {
+                "qty": 1,
+                "itemNo": 32013,
+                "image": "https://img.bricklink.com/ItemImage/SN/0/8531-2.png"
+              },
+              {
+                "qty": 4,
+                "itemNo": 32174,
+                "image": "https://img.bricklink.com/ItemImage/SN/0/8531-2.png"
+              },
+              {
+                "qty": 1,
+                "itemNo": 32039,
+                "image": "https://img.bricklink.com/ItemImage/SN/0/8531-2.png"
+              },
+              {
+                "qty": 2,
+                "itemNo": 32172,
+                "image": "https://img.bricklink.com/ItemImage/SN/0/8531-2.png"
+              },
+              {
+                "qty": 4,
+                "itemNo": 2780,
+                "image": "https://img.bricklink.com/ItemImage/SN/0/8531-2.png"
+              },
+              {
+                "qty": 1,
+                "itemNo": 32489,
+                "image": "https://img.bricklink.com/ItemImage/SN/0/8531-2.png"
+              },
+              {
+                "qty": 2,
+                "itemNo": 32475,
+                "image": "https://img.bricklink.com/ItemImage/SN/0/8531-2.png"
+              },
+              {
+                "qty": 1,
+                "itemNo": 32568,
+                "description": "https://img.bricklink.com/ItemImage/SN/0/8531-2.png"
+              },
+              {
+                "qty": 1,
+                "itemNo": 30294,
+                "description": "https://img.bricklink.com/ItemImage/SN/0/8531-2.png"
+              },
+              {
+                "qty": 1,
+                "itemNo": 30293,
+                "description": "https://img.bricklink.com/ItemImage/SN/0/8531-2.png"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "meta": []
+}
