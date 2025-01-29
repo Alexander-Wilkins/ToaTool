@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { SetCardComponent } from '../components/set-card/set-card.component';
 import { ISetData } from '../set-data';
 import { BionicleSetDataService } from '../bionicle-set-data.service';
-import { of } from 'rxjs';
 
 @Component({
   selector: 'app-home',
