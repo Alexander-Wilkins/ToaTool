@@ -43,7 +43,7 @@ X-API-KEY: {{mockApiKey}}
 GET http://{{host}}/bionicles
 
 ### Test Get Bionicle by search term
-GET http://{{host}}/bionicles?8531-1
+GET http://{{host}}/bionicles/set?id={{pohatu}}
 
 
 ### Rebrickable API
