@@ -24,7 +24,7 @@ export class BionicleSetDataService {
     return this.fetchBionicleData<ISetData[]>(`?year=${year}`);
   }
 
-  getBionicleDataById(id: string): Observable<ISetData> {
-    return this.fetchBionicleData<ISetData>('/set', `?id=${id}`);
+  getBionicleDataById(id: string, year: string): Observable<ISetData> {
+    return this.fetchBionicleData<ISetData>('/set', `?id=${id}&year=${year}`);
   }
 }

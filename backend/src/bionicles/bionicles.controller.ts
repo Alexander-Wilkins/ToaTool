@@ -17,12 +17,14 @@ export class BioniclesController {
     @Get('set')
     async findOne(
         @Query('id') id: string,
+        @Query('year') year: string,
     ) {
-        const setDetails = await this.rebrickableService.findOne(id);
+        const setDetails = await this.rebrickableService.findOne(id, year);
         const pieces = await this.rebrickableService.getPiecesBySetIdNumber(id);
         const combinedData = {
             ...setDetails,
             pieces: pieces,
+            year: year,
         };
         return combinedData;
     }

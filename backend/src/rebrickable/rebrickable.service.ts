@@ -56,7 +56,7 @@ export class RebrickableService {
       .filter((bionicle) => bionicle.set_num.length <= maxCharactersForSetNum)
       .filter(
         (bionicle) =>
-          !/(kit|pack|value|BIONICLE|Nestlé|collection|give|away|QUICK|chamber|launcher|battle|gift|500|good|bad|function)/i.test(
+          !/(kit|pack|value|BIONICLE|Nestlé|collection|give|away|QUICK|chamber|launcher|battle|gift|500|good|bad|function|catapult)/i.test(
             bionicle.name,
           ),
       )
@@ -71,8 +71,8 @@ export class RebrickableService {
       }));
   }
 
-  async findOne(id: string): Promise<any> {
-    const allSets = await this.findAll('');
+  async findOne(id: string, year: string): Promise<any> {
+    const allSets = await this.findAll(year);
     return allSets.find((set) => set.set_num === id) || null;
   }
 }

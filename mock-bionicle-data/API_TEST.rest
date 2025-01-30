@@ -47,20 +47,18 @@ GET http://{{host}}/bionicles?year=2003
 ### Test Get Bionicle by search term
 GET http://{{host}}/bionicles/set?id={{kongu}}
 
+### Get Bionicle by set number and year
+GET http://{{host}}/bionicles/set?id={{pohatu}}&year=2001
+
 
 ### Rebrickable API
 
 @rebrickable = https://rebrickable.com/api/v3/lego/sets
 
-GET {{rebrickable}}
-?min_year=2001
-&max_year=2010
-&search=gali
-Authorization: key 9fb8e2fe27824be982cb60651c5e44c1
-
 ### Rebrickable search bionicles by theme id and year range
 GET {{rebrickable}}
 ?theme_id=324
+&min_year=2001
 &max_year=2001
 Authorization: key 9fb8e2fe27824be982cb60651c5e44c1
 

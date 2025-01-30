@@ -59,7 +59,7 @@ import { map } from 'rxjs';
                 QTY: {{ piece.quantity }}
               </div>
               <img
-                [ngSrc]="piece.part_img_url"
+                [ngSrc]="piece.part_img_url || 'images/null-image.png'"
                 alt="LEGO Piece"
                 width="80"
                 height="85"
@@ -77,8 +77,9 @@ export class SetDetailComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
   bionicleService: BionicleSetDataService = inject(BionicleSetDataService);
 
+  yearParam: string = this.route.snapshot.params['year'] || '';
   setIdParam: string = this.route.snapshot.params['id'] || '';
-  bionicleDataList$ = this.bionicleService.getBionicleDataById(this.setIdParam);
+  bionicleDataList$ = this.bionicleService.getBionicleDataById(this.setIdParam, this.yearParam);
   bioniclePieces$ = this.bionicleDataList$.pipe(
     map((data: ISetData) => data.pieces),
   );
@@ -104,7 +105,7 @@ export class SetDetailComponent {
   ];
 
   constructor() {
-    console.log('Currnet URL Params:', this.setIdParam);
+    console.log('Currnet URL Params:', this.setIdParam, this.yearParam);
   }
 
   comparePieces(toCompare: ISetPieces): boolean {
