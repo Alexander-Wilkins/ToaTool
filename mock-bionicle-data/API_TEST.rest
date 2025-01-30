@@ -48,7 +48,7 @@ GET http://{{host}}/bionicles?year=2003
 GET http://{{host}}/bionicles/set?id={{kongu}}
 
 ### Get Bionicle by set number and year
-GET http://{{host}}/bionicles/set?id={{pohatu}}&year=2001
+GET http://{{host}}/bionicles/set?id=10202-2&year=2001
 
 
 ### Rebrickable API

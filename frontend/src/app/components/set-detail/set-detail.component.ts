@@ -42,7 +42,13 @@ import { map } from 'rxjs';
           />
         </div>
         <div class="mt-8">
-          <h2 class="font-bold text-[1.625rem]">Standard Pieces:</h2>
+          <h2 class="font-bold text-[1.625rem]">
+            {{
+              bionicleDataList.pieces && bionicleDataList.pieces.length > 0
+                ? 'Standard Pieces:'
+                : 'No Pieces Found... :( '
+            }}
+          </h2>
           <div class="grid grid-cols-3 2xl:grid-cols-9 gap-4 mt-4 align-center">
             <div
               *ngFor="let piece of bionicleDataList.pieces; let i = index"
@@ -79,7 +85,10 @@ export class SetDetailComponent {
 
   yearParam: string = this.route.snapshot.params['year'] || '';
   setIdParam: string = this.route.snapshot.params['id'] || '';
-  bionicleDataList$ = this.bionicleService.getBionicleDataById(this.setIdParam, this.yearParam);
+  bionicleDataList$ = this.bionicleService.getBionicleDataById(
+    this.setIdParam,
+    this.yearParam,
+  );
   bioniclePieces$ = this.bionicleDataList$.pipe(
     map((data: ISetData) => data.pieces),
   );
