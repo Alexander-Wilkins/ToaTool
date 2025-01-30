@@ -1,43 +1,3 @@
-<style>
-  :host {
-    font-family:
-      "Inter",
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      Roboto,
-      Helvetica,
-      Arial,
-      sans-serif,
-      "Apple Color Emoji",
-      "Segoe UI Emoji",
-      "Segoe UI Symbol";
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  #page-container {
-    position: relative;
-    min-height: 100vh;
-  }
-
-  #content-wrap {
-    padding-bottom: 2.5rem;    /* Footer height */
-  }
-
-  #footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem;            /* Footer height */
-    font-family: "trajan-pro-3", serif;
-    /* font-weight: 300; */
-    /* font-style: normal; */
-  }
-
-  
-</style>
-
 <div id="page-container" class="container mx-auto p-5">
   <div id="content-wrap">
     <app-header />
@@ -45,5 +5,8 @@
       <router-outlet></router-outlet>
     </main>
   </div>
-  <footer id="footer" class="text-center text-[0.65rem]">&copy; ToaTool is Designed and Developed by Alex Wilkins. <br/>All rights Reserved.</footer>
+  <footer id="footer" class="text-center text-[0.65rem]">
+    &copy; ToaTool is Designed and Developed by Alex Wilkins. <br />All rights
+    Reserved.
+  </footer>
 </div>

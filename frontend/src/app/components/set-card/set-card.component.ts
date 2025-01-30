@@ -7,7 +7,6 @@ import { ISetData } from '../../set-data';
   selector: 'app-set-card',
   imports: [NgOptimizedImage],
   template: `
-  <!-- <a [routerLink]="['/set', setData.set_num]" class="block" -->
   <a href="{{'/set/' + setData.set_num}}" class="block"
     class="p-5 inline-block rounded-md border border-gray-300 shadow-sm transition-all hover:bg-gray-100 hover:shadow-xl hover:-translate-y-1"
   >
