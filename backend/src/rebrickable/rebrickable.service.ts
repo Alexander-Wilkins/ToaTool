@@ -49,16 +49,23 @@ export class RebrickableService {
   async findAll(maxYear: string): Promise<any> {
     const { data } = await this.getFirstValueFrom(
       this.rebrickableAuthorizationKey,
-      `?theme_id=${this.themeId}&max_year=${maxYear}`,
+      `?theme_id=${this.themeId}&min_year=${maxYear}&max_year=${maxYear}`,
     );
     const maxCharactersForSetNum = 7;
     return data.results
       .filter((bionicle) => bionicle.set_num.length <= maxCharactersForSetNum)
+      .filter(
+        (bionicle) =>
+          !/(kit|pack|value|BIONICLE|Nestlé|collection|give|away|QUICK|chamber|launcher|battle|gift|500|good|bad|function)/i.test(
+            bionicle.name,
+          ),
+      )
+      .filter((bionicle) => !/^K/i.test(bionicle.set_num))
       .map((bionicle) => ({
         set_num: bionicle.set_num,
         name: bionicle.name
           .replace(/ *\([^)]*\) */g, '')
-          .replace(/ *\[[^\]]*\] */g, ''), // Remove any text in parentheses and brackets
+          .replace(/ *\[[^\]]*\] */g, ''), // Remove any text in parentheses and brackets,
         year: bionicle.year,
         set_img_url: bionicle.set_img_url,
       }));

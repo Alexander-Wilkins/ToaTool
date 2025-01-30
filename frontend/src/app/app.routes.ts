@@ -14,7 +14,7 @@ export const routes: Routes = [
     title: 'Bionicles by Year'
   },
   {
-    path: 'set/:id',
+    path: 'year/:year/set/:id',
     component: SetDetailComponent,
     title: 'Set Detail',
   }

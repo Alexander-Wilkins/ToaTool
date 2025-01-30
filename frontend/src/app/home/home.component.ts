@@ -10,9 +10,11 @@ import { ActivatedRoute } from '@angular/router';
   imports: [CommonModule, SetCardComponent],
   host: { hostID: crypto.randomUUID().toString() },
   template: `
-    <h2 class="p-4 font-bold text-2xl">Year: {{ selectedYear }}</h2>
+    <h2 class="pr-4 pt-4 font-bold text-2xl">Year: {{ selectedYear }}</h2>
+    <p class="pb-4">{{ (bionicles$ | async)?.length }} Total Bionicles</p>
+
     <div
-      class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-4"
+      class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-4 mb-20"
     >
       <app-set-card
         *ngFor="let bionicle of bionicles$ | async"
@@ -28,4 +30,8 @@ export class HomeComponent {
   defaultYear = '2001';
   selectedYear = this.route.snapshot.paramMap.get('year') || this.defaultYear;
   bionicles$ = this.bionicleService.getAllBionicleDataByYear(this.selectedYear);
+
+  constructor() {
+    // Subscription logic is no longer needed as bionicles is now an Observable
+  }
 }

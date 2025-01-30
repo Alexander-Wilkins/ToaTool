@@ -18,7 +18,9 @@ import { map } from 'rxjs';
       >
     </div>
     <div *ngIf="bionicleDataList$ | async as bionicleDataList">
-      <div class="max-w-[61.25rem] flex flex-col items-center mx-auto mt-8">
+      <div
+        class="max-w-[61.25rem] flex flex-col items-center mx-auto mt-8 mb-20"
+      >
         <div
           id="top-content"
           class="flex flex-col items-center md:flex-row md:gap-4"
@@ -101,7 +103,9 @@ export class SetDetailComponent {
     },
   ];
 
-  constructor() {}
+  constructor() {
+    console.log('Currnet URL Params:', this.setIdParam);
+  }
 
   comparePieces(toCompare: ISetPieces): boolean {
     return this.tubOfPieces.some(
