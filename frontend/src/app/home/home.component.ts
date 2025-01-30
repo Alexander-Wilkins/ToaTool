@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   standalone: true,
   imports: [CommonModule, SetCardComponent],
   template: `
+    <h2 class="p-4 font-bold text-2xl">Year: {{ selectedYear }}</h2>
     <div
       class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-4"
     >
@@ -24,8 +25,9 @@ export class HomeComponent {
   bionicleService: BionicleSetDataService = inject(BionicleSetDataService);
 
   defaultYear = '2001';
-  bionicles$ = this.bionicleService.getAllBionicleDataByYear(this.defaultYear);
-  constructor() {
-    window.history.pushState({}, '', this.defaultYear);
-  }
+  selectedYear = this.route.snapshot.paramMap.get('year') || this.defaultYear;
+  bionicles$ = this.bionicleService.getAllBionicleDataByYear(this.selectedYear);
+  // constructor() {
+  //   window.history.pushState({}, '', this.defaultYear);
+  // }
 }

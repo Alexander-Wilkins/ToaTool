@@ -30,11 +30,11 @@ import { FormsModule } from '@angular/forms';
           (click)="pickYear()"
           class="rounded border border-black p-[0.4rem] font-bold"
         >
-          GO
+          SUBMIT
         </button>
       </form>
     </header>
-    <div>{{ selectedYear }}</div> `,
+    `,
 })
 export class HeaderComponent {
   toaToolLogo: string = 'images/toaTool-logo.png';
@@ -43,6 +43,6 @@ export class HeaderComponent {
 
   pickYear() {
     this.selectedYear = document.querySelector('select')?.value || '';
-    window.location.pathname = this.selectedYear;
+    window.location.pathname = `/year/${this.selectedYear}`;
   }
 }

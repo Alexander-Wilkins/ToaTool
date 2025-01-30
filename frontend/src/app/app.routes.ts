@@ -9,6 +9,11 @@ export const routes: Routes = [
     title: 'Home Page',
   }, 
   {
+    path: 'year/:year',
+    component: HomeComponent,
+    title: 'Bionicles by Year'
+  },
+  {
     path: 'set/:id',
     component: SetDetailComponent,
     title: 'Set Detail',
