@@ -11,14 +11,12 @@ import { FormsModule } from '@angular/forms';
     class="flex-row items-center justify-between gap-2 lg:flex"
   >
     <div class="p-7">
-      <a href="/" class="block">
-        <img
-          [ngSrc]="toaToolLogo"
-          alt="Toa Tool with cross pickaxe LEGO pieces"
-          width="446"
-          height="80"
-        />
-      </a>
+      <img
+        [ngSrc]="toaToolLogo"
+        alt="Toa Tool with cross pickaxe LEGO pieces"
+        width="446"
+        height="80"
+      />
     </div>
     <form class="flex flex-row items-center gap-2 px-4">
       <strong>Year</strong>
@@ -61,7 +59,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe((params) => {
       this.selectedYear = params['year'] || '';
-      console.log(this.selectedYear)
+      console.log(this.selectedYear);
     });
   }
 

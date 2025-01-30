@@ -3,13 +3,20 @@ import { ActivatedRoute } from '@angular/router';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { BionicleSetDataService } from '../../bionicle-set-data.service';
 import { ISetPieces, ISetData } from '../../set-data';
-import { map, Observable, of } from 'rxjs';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-set-detail',
   imports: [CommonModule, NgOptimizedImage],
   host: { hostID: crypto.randomUUID().toString() },
   template: `
+    <div>
+      <a
+        href="javascript:history.back()"
+        class="rounded border p-4 font-bold border-gray-300 shadow-sm transition-all hover:bg-gray-100 hover:shadow-xl hover:-translate-y-1"
+        >< Back</a
+      >
+    </div>
     <div *ngIf="bionicleDataList$ | async as bionicleDataList">
       <div class="max-w-[61.25rem] flex flex-col items-center mx-auto mt-8">
         <div
@@ -94,16 +101,14 @@ export class SetDetailComponent {
     },
   ];
 
-  // comparedPieces$ = of(this.comparePieces(this.tubOfPieces));
-
   constructor() {}
 
   comparePieces(toCompare: ISetPieces): boolean {
     return this.tubOfPieces.some(
       (piece) =>
-      piece.part_num === toCompare.part_num &&
-      piece.part_img_url === toCompare.part_img_url &&
-      piece.quantity === toCompare.quantity
+        piece.part_num === toCompare.part_num &&
+        piece.part_img_url === toCompare.part_img_url &&
+        piece.quantity === toCompare.quantity,
     );
   }
 }
