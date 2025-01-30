@@ -8,6 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule, SetCardComponent],
+  host: { hostID: crypto.randomUUID().toString() },
   template: `
     <h2 class="p-4 font-bold text-2xl">Year: {{ selectedYear }}</h2>
     <div
@@ -27,7 +28,4 @@ export class HomeComponent {
   defaultYear = '2001';
   selectedYear = this.route.snapshot.paramMap.get('year') || this.defaultYear;
   bionicles$ = this.bionicleService.getAllBionicleDataByYear(this.selectedYear);
-  // constructor() {
-  //   window.history.pushState({}, '', this.defaultYear);
-  // }
 }

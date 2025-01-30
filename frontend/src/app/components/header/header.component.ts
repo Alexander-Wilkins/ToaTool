@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-header',
   imports: [NgOptimizedImage, CommonModule, FormsModule],
+  host: { hostID: crypto.randomUUID().toString() },
   template: `<header
     class="flex-row items-center justify-between gap-2 lg:flex"
   >

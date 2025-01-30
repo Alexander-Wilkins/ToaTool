@@ -10,6 +10,7 @@ export class BionicleSetDataService {
   private _apiUrl: string = 'http://localhost:3000/bionicles';
   protected setDataList: ISetData[] = [];
 
+
   constructor(private http: HttpClient) {}
 
   fetchBionicleData<T>(path?: string, ...queryParams: string[]) {

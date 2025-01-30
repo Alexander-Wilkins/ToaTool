@@ -18,6 +18,8 @@
 @gali = 8535-1
 @onua = 8536-1
 
+@kongu = 1392-1
+
 
 ### GET All Episodes
 # http://localhost:3000/episodes
@@ -43,7 +45,7 @@ X-API-KEY: {{mockApiKey}}
 GET http://{{host}}/bionicles?year=2003
 
 ### Test Get Bionicle by search term
-GET http://{{host}}/bionicles/set?id=10023-1
+GET http://{{host}}/bionicles/set?id={{kongu}}
 
 
 ### Rebrickable API

@@ -11,3 +11,4 @@ export interface ISetData extends ISetPieces {
   set_img_url: string;
   pieces: ISetPieces[];
 }
+
