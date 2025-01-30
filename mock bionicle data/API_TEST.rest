@@ -40,10 +40,10 @@ X-API-KEY: {{mockApiKey}}
 
 
 ### Test Get Bionicles
-GET http://{{host}}/bionicles
+GET http://{{host}}/bionicles?year=2003
 
 ### Test Get Bionicle by search term
-GET http://{{host}}/bionicles/set?id={{pohatu}}
+GET http://{{host}}/bionicles/set?id=10023-1
 
 
 ### Rebrickable API
