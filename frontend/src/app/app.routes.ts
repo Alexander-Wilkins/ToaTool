@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { RenderMode, ServerRoute } from '@angular/ssr';
 import { HomeComponent } from './home/home.component';
 import { SetDetailComponent } from './components/set-detail/set-detail.component';
 
