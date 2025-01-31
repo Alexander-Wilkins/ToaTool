@@ -5,7 +5,8 @@ import { firstValueFrom, catchError } from 'rxjs';
 
 @Injectable()
 export class RebrickableService {
-  private readonly rebrickableKey: string = process.env.REBRICKABLE_KEY;
+  // private readonly rebrickableKey: string = process.env.REBRICKABLE_KEY;
+  private readonly rebrickableKey: string = "9fb8e2fe27824be982cb60651c5e44c1";
   private readonly logger = new Logger(RebrickableService.name);
   private readonly baseUrl: string =
     'https://rebrickable.com/api/v3/lego/sets/';
