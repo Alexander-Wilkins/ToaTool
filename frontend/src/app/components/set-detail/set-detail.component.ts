@@ -89,9 +89,11 @@ export class SetDetailComponent {
     this.setIdParam,
     this.yearParam,
   );
+
   bioniclePieces$ = this.bionicleDataList$.pipe(
     map((data: ISetData) => data.pieces),
   );
+
   tubOfPieces: ISetPieces[] = [
     {
       part_num: '32171pr0005',
@@ -114,7 +116,7 @@ export class SetDetailComponent {
   ];
 
   constructor() {
-    console.log('Currnet URL Params:', this.setIdParam, this.yearParam);
+    console.log('Current URL Params:', this.setIdParam, this.yearParam);
   }
 
   comparePieces(toCompare: ISetPieces): boolean {

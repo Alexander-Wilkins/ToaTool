@@ -30,8 +30,4 @@ export class HomeComponent {
   defaultYear = '2001';
   selectedYear = this.route.snapshot.paramMap.get('year') || this.defaultYear;
   bionicles$ = this.bionicleService.getAllBionicleDataByYear(this.selectedYear);
-
-  constructor() {
-    // Subscription logic is no longer needed as bionicles is now an Observable
-  }
 }

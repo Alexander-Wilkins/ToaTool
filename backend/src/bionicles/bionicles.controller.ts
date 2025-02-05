@@ -19,21 +19,6 @@ export class BioniclesController {
         @Query('id') id: string,
         @Query('year') year: string,
     ) {
-        const setDetails = await this.rebrickableService.findOne(id, year);
-        const pieces = await this.rebrickableService.getPiecesBySetIdNumber(id);
-        const combinedData = {
-            ...setDetails,
-            pieces: pieces,
-            year: year,
-        };
-        return combinedData;
+        return this.rebrickableService.findOneSet(id, year);
     }
-
-    @Get('pieces')
-    findPieces(
-        @Query('id') id: string,
-    ) {
-        return this.rebrickableService.getPiecesBySetIdNumber(id);
-    }
-
 }

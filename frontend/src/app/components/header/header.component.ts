@@ -47,17 +47,11 @@ import { FormsModule } from '@angular/forms';
     </form>
   </header> `,
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
+  
   toaToolLogo: string = 'images/toaTool-logo.png';
-  selectedYear: string = '';
-
-  ngOnInit() {
-    this.route.params.subscribe((params) => {
-      this.selectedYear = params['year'] || '';
-      console.log(this.selectedYear);
-    });
-  }
+  selectedYear: string = this.route.snapshot.params['year'] || '';
 
   pickYear(event: Event) {
     event.preventDefault();
