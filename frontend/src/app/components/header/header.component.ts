@@ -33,8 +33,9 @@ import { filter } from 'rxjs/operators';
         class="w-full rounded border border-black bg-gray-100 p-2 lg:w-[16.875rem]"
         formControlName="year"
         name="bionicleYears"
+        (change)="onYearChange()"
       >
-        <option value disabled selected >{{ pickedYear }}</option>
+        <option value disabled selected>{{ pickedYear }}</option>
         <option
           *ngFor="let bionicleYear of bionicleYears"
           [ngValue]="bionicleYear"
@@ -44,9 +45,15 @@ import { filter } from 'rxjs/operators';
       </select>
       <button
         type="submit"
-        class="rounded border p-2 font-bold border-gray-300 shadow-sm transition-all hover:bg-gray-100 hover:shadow-xl hover:-translate-y-1 hover:cursor-pointer active:translate-y-0 active:shadow-sm"
+        class="rounded border p-2 w-[5.5rem] h-[2.625rem] font-bold border-gray-300 shadow-sm transition-all"
+        [ngClass]="{
+          'hover:bg-gray-100 hover:shadow-xl hover:-translate-y-1 hover:cursor-pointer active:translate-y-0 active:shadow-sm': yearChanged,
+          'bg-gray-200 text-gray-500 cursor-not-allowed': !yearChanged
+        }"
+        [disabled]="loading || !yearChanged"
       >
-        SUBMIT
+        <span *ngIf="!loading">SUBMIT</span>
+        <span *ngIf="loading" class="text-sm">Loading...</span>
       </button>
     </form>
   </header> `,
@@ -66,6 +73,9 @@ export class HeaderComponent {
     year: '',
   });
 
+  loading = false;
+  yearChanged = false;
+
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -79,8 +89,13 @@ export class HeaderComponent {
 
   pickTheYear(event: Event) {
     event.preventDefault();
+    this.loading = true;
     const baseUrl = window.location.origin; // I got my eye on you...
     window.location.href = `${baseUrl}/year/${this.changeYearForm.value.year}`;
+  }
+
+  onYearChange() {
+    this.yearChanged = true;
   }
 
   getCurrentYearFromUrl(): string {
