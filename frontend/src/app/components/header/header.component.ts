@@ -47,7 +47,7 @@ import { filter } from 'rxjs/operators';
         type="submit"
         class="rounded border p-2 w-[5.5rem] h-[2.625rem] font-bold border-gray-300 shadow-sm transition-all"
         [ngClass]="{
-          'hover:bg-gray-100 hover:shadow-xl hover:-translate-y-1 hover:cursor-pointer active:translate-y-0 active:shadow-sm': yearChanged,
+          'text-white bg-blue-600 hover:bg-blue-800 hover:shadow-xl hover:-translate-y-1 hover:cursor-pointer active:translate-y-0 active:shadow-sm': yearChanged,
           'bg-gray-200 text-gray-500 cursor-not-allowed': !yearChanged
         }"
         [disabled]="loading || !yearChanged"
