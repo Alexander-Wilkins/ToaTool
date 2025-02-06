@@ -14,12 +14,14 @@ import { filter } from 'rxjs/operators';
     class="flex-row items-center justify-between gap-2 lg:flex"
   >
     <div class="p-7">
-      <img
-        [ngSrc]="toaToolLogo"
-        alt="Toa Tool with cross pickaxe LEGO pieces"
-        width="446"
-        height="80"
-      />
+      <a href="/year/2001">
+        <img
+          [ngSrc]="toaToolLogo"
+          alt="Toa Tool with cross pickaxe LEGO pieces"
+          width="446"
+          height="80"
+        />
+      </a>
     </div>
     <form
       class="flex flex-row items-center gap-2 px-4"
@@ -77,7 +79,8 @@ export class HeaderComponent {
 
   pickTheYear(event: Event) {
     event.preventDefault();
-    window.location.pathname = `/year/${this.changeYearForm.value.year}`;
+    const baseUrl = window.location.origin; // I got my eye on you...
+    window.location.href = `${baseUrl}/year/${this.changeYearForm.value.year}`;
   }
 
   getCurrentYearFromUrl(): string {
