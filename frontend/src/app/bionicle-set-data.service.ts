@@ -11,7 +11,7 @@ export class BionicleSetDataService {
 
   constructor(private http: HttpClient) {}
 
-  fetchBionicleData<T>(path?: string, ...queryParams: string[]) {
+  private _fetchBionicleData<T>(path?: string, ...queryParams: string[]) {
     console.log('fetchBionicleData method triggered...');
     const request = `${this._apiUrl}${path}${queryParams}`;
     console.log(request);
@@ -19,10 +19,10 @@ export class BionicleSetDataService {
   }
 
   getAllBionicleDataByYear(year: string): Observable<ISetData[]> {
-    return this.fetchBionicleData<ISetData[]>(`?year=${year}`);
+    return this._fetchBionicleData<ISetData[]>(`?year=${year}`);
   }
 
   getBionicleDataById(id: string, year: string): Observable<ISetData> {
-    return this.fetchBionicleData<ISetData>('/set', `?id=${id}&year=${year}`);
+    return this._fetchBionicleData<ISetData>('/set', `?id=${id}&year=${year}`);
   }
 }

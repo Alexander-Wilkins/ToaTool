@@ -1,11 +1,10 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-header',
-  imports: [NgOptimizedImage, CommonModule, FormsModule],
+  imports: [NgOptimizedImage, CommonModule],
   host: { hostID: crypto.randomUUID().toString() },
   template: `<header
     class="flex-row items-center justify-between gap-2 lg:flex"
@@ -49,13 +48,12 @@ import { FormsModule } from '@angular/forms';
 })
 export class HeaderComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
-  
+
   toaToolLogo: string = 'images/toaTool-logo.png';
-  selectedYear: string = this.route.snapshot.params['year'] || '';
 
   pickYear(event: Event) {
     event.preventDefault();
-    this.selectedYear = document.querySelector('select')?.value || '';
-    window.location.pathname = `/year/${this.selectedYear}`;
+    const selectedYear = document.querySelector('select')?.value || '';
+    window.location.pathname = `/year/${selectedYear}`;
   }
 }
