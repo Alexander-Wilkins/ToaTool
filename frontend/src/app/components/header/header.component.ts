@@ -26,14 +26,13 @@ import { filter } from 'rxjs/operators';
       [formGroup]="changeYearForm"
       (ngSubmit)="pickTheYear($event)"
     >
-      <!-- <strong>Year</strong> -->
       <strong>Current Year:</strong>
       <select
         class="w-full rounded border border-black bg-gray-100 p-2 lg:w-[16.875rem]"
         formControlName="year"
         name="bionicleYears"
       >
-        <option value disabled selected>{{ pickedYear }}</option>
+        <option value disabled selected >{{ pickedYear }}</option>
         <option
           *ngFor="let bionicleYear of bionicleYears"
           [ngValue]="bionicleYear"
@@ -43,18 +42,18 @@ import { filter } from 'rxjs/operators';
       </select>
       <button
         type="submit"
-        class="rounded border border-black p-[0.4rem] font-bold"
+        class="rounded border p-2 font-bold border-gray-300 shadow-sm transition-all hover:bg-gray-100 hover:shadow-xl hover:-translate-y-1 hover:cursor-pointer active:translate-y-0 active:shadow-sm"
       >
         SUBMIT
       </button>
     </form>
   </header> `,
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
-  bionicleService = inject(BionicleSetDataService);
 
   toaToolLogo: string = 'images/toaTool-logo.png';
+
   bionicleYears: string[] = Array.from({ length: 10 }, (_, i) =>
     (2001 + i).toString(),
   ).concat(['2015', '2016']);
@@ -73,21 +72,7 @@ export class HeaderComponent implements OnInit {
       .pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe(() => {
         this.pickedYear = this.getCurrentYearFromUrl();
-        console.log(
-          'Current year from URL:',
-          this.pickedYear,
-          typeof this.pickedYear,
-        );
       });
-  }
-
-  ngOnInit() {
-    this.route.paramMap.subscribe((params) => {
-      const year = params.get('year');
-      if (year && this.bionicleYears.includes(year)) {
-        this.changeYearForm.patchValue({ year });
-      }
-    });
   }
 
   pickTheYear(event: Event) {
@@ -97,7 +82,7 @@ export class HeaderComponent implements OnInit {
 
   getCurrentYearFromUrl(): string {
     const urlSegments = this.router.url.split('/');
-    const yearSegment = urlSegments.find(segment => /^\d{4}$/.test(segment));
+    const yearSegment = urlSegments.find((segment) => /^\d{4}$/.test(segment));
     return yearSegment || '';
   }
 }
