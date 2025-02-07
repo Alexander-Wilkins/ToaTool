@@ -15,7 +15,7 @@ import { map } from 'rxjs';
       <a
         href="javascript:history.back()"
         class="rounded border p-4 font-bold border-gray-300 shadow-sm transition-all hover:bg-gray-100 hover:shadow-xl hover:-translate-y-1"
-        >< Back</a
+        ><i class="fa-solid fa-arrow-left"></i> Back</a
       >
     </div>
     <div *ngIf="bionicleDataList$ | async as bionicleDataList">
@@ -96,10 +96,6 @@ export class SetDetailComponent {
   );
 
   tubOfPieces: ISetPieces[] = mockDataPieces;
-
-  constructor() {
-    console.log('Current URL Params:', this.setIdParam, this.yearParam);
-  }
 
   comparePieces(toCompare: ISetPieces): boolean {
     return this.tubOfPieces.some(

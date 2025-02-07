@@ -1,9 +1,8 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { FormBuilder } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BionicleSetDataService } from '../../bionicle-set-data.service';
 import { filter } from 'rxjs/operators';
 
 @Component({

@@ -1,6 +1,7 @@
 import { HttpService } from '@nestjs/axios';
 import { Injectable, Logger } from '@nestjs/common';
 import { AxiosError } from 'axios';
+import { promises } from 'dns';
 import { firstValueFrom, catchError } from 'rxjs';
 
 @Injectable()
@@ -76,5 +77,11 @@ export class RebrickableService {
       pieces: pieces,
       year: year,
     };
+  }
+
+  async findSpecificBionicle(query): Promise<any> {
+    const url = `${this._baseUrl}?theme_id=${this._themeId}&search=${query}`;
+    const {data} = await this._fetchData(url);
+    return this._filterSets(data);
   }
 }
