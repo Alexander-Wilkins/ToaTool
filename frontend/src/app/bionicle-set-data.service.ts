@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ISetData } from './set-data';
-import { catchError, Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
+import { environment } from './../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class BionicleSetDataService {
-  private _host: string = '/api/bionicles';
+  private _host: string = environment.apiUrl;
 
   constructor(private http: HttpClient) {}
 
