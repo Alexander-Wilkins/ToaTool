@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { BionicleSetDataService } from '../../bionicle-set-data.service';
 import { ISetPieces, ISetData } from '../../set-data';
+import { mockDataPieces } from '../../mockDataPieces';
 import { map } from 'rxjs';
 
 @Component({
@@ -94,26 +95,7 @@ export class SetDetailComponent {
     map((data: ISetData) => data.pieces),
   );
 
-  tubOfPieces: ISetPieces[] = [
-    {
-      part_num: '32171pr0005',
-      part_img_url:
-        'https://cdn.rebrickable.com/media/parts/photos/0/32171pb005-0-a0154156-134c-4cc1-a69d-7585131c36f9.jpg',
-      quantity: 1,
-    },
-    {
-      part_num: '32579',
-      part_img_url:
-        'https://cdn.rebrickable.com/media/parts/elements/4193957.jpg',
-      quantity: 1,
-    },
-    {
-      part_num: '32576',
-      part_img_url:
-        'https://cdn.rebrickable.com/media/parts/elements/4156764.jpg',
-      quantity: 2,
-    },
-  ];
+  tubOfPieces: ISetPieces[] = mockDataPieces;
 
   constructor() {
     console.log('Current URL Params:', this.setIdParam, this.yearParam);

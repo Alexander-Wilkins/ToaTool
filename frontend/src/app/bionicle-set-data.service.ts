@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ISetData } from './set-data';
-import { Observable } from 'rxjs';
-import { Router, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import { catchError, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -27,4 +25,13 @@ export class BionicleSetDataService {
   getBionicleDataById(id: string, year: string): Observable<ISetData> {
     return this._fetchBionicleData<ISetData>('/set', `?id=${id}&year=${year}`);
   }
+
+  // getMockBioniclaePieces(): Observable<any> {
+  //   return this.http.get('assets/mockOwnedPieces.json').pipe(
+  //     catchError((error: any) => {
+  //       console.error('Error:', error);
+  //       return of([]);
+  //     }),
+  //   );
+  // }
 }

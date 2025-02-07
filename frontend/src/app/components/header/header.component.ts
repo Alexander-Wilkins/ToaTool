@@ -61,7 +61,7 @@ import { filter } from 'rxjs/operators';
 export class HeaderComponent {
   route: ActivatedRoute = inject(ActivatedRoute);
 
-  toaToolLogo: string = 'images/toaTool-logo.png';
+  toaToolLogo: string = 'assets/images/toaTool-logo.png';
 
   bionicleYears: string[] = Array.from({ length: 10 }, (_, i) =>
     (2001 + i).toString(),
