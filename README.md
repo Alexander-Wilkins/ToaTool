@@ -1,4 +1,4 @@
-![Alt text](frontend/public/images/toa-tool-logo-white.png?raw=true "ToaTool")
+![Alt text](frontend/src/assets/images/toa-tool-logo-white.png?raw=true "ToaTool")
 # ToaToal v0.1.0
 ---
 A Mobile-First tool for determining which Bionicle sets are able to be built based off of the user's existing quantity of pieces. Each of the Bionicle Sets can be searched by Year. 
