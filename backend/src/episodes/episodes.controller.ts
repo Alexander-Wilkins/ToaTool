@@ -9,7 +9,6 @@ import { ApiKeyGuard } from './guards/api-key.guard';
 export class EpisodesController {
   constructor(
     private episodesService: EpisodesService,
-    // private configService: ConfigService,
   ) {}
 
   // http://localhost:3000/episodes?sort=asc
