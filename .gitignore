@@ -36,8 +36,8 @@ packages/**/node_modules
 *.sln
 *.sw?
 
-# Bionicle Resources
-
+# 3rd Party Resources
+third-party/
 
 # OS generated files
 .DS_Store

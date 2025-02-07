@@ -28,7 +28,7 @@ import { filter } from 'rxjs/operators';
       [formGroup]="changeYearForm"
       (ngSubmit)="pickTheYear($event)"
     >
-      <strong>Current Year:</strong>
+      <strong class="text-center">Current Year:</strong>
       <select
         class="w-full rounded border border-black bg-gray-100 p-2 lg:w-[16.875rem]"
         formControlName="year"
