@@ -13,9 +13,7 @@ export class BionicleSetDataService {
   constructor(private http: HttpClient) {}
 
   private _fetchBionicleData<T>(path?: string, ...queryParams: string[]) {
-    // console.log('fetchBionicleData method triggered...');
     const request = `${this._host}${path}${queryParams}`;
-    // console.log(request);
     return this.http.get<T>(request);
   }
 

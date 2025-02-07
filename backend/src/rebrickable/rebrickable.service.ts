@@ -81,7 +81,7 @@ export class RebrickableService {
 
   async findSpecificBionicle(query): Promise<any> {
     const url = `${this._baseUrl}?theme_id=${this._themeId}&search=${query}`;
-    const {data} = await this._fetchData(url);
+    const { data } = await this._fetchData(url);
     return this._filterSets(data);
   }
 }
